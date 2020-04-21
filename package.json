@@ -29,17 +29,6 @@
     "prettier": "prettier --write src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.(js|jsx)": [
-      "npm run lint:fix",
-      "git add"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
