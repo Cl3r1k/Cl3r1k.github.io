@@ -1,0 +1,51 @@
+.intro-typing {
+  z-index: 20;
+  &-body {
+    white-space: nowrap;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    color: white;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 4em;
+  }
+
+  &-animated-text {
+    margin: 0px 0 0 0.3em;
+    padding: 0px;
+    font-weight: 600;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 0.1em solid;
+    animation: typing 4s infinite alternate, blink 0.5s infinite alternate;
+    width: 0px;
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+  35% {
+    width: 100%;
+  }
+  65% {
+    width: 100%;
+  }
+  to {
+    width: 0px;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

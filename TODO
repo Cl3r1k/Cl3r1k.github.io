@@ -4,11 +4,12 @@ Todo:
     ✔ implement styles for menu items @done(20-04-22 12:25)
       ☐ Improve styles for menu item (when link clicked, if smooth scroll, styles applyed after scroll completed (look for class change to 'active'))  
     ✔ implement styles backgound for menu @done(20-04-22 12:25)
-  ☐ Start block layout
+    ☐ Implement custom text/logo/image for <h1>
+  ☐ Intro section layout
     ✔ implement `particles-js` @done(20-04-22 14:34)
-    ☐ implement `self typing text`   <========================================================= CURRENT TASK  
+    ✔ implement `self typing text` @done(20-04-22 17:18)
     ✔ implement `Scroll down` @done(20-04-22 15:04)
-  ☐ About me block layout
+  ☐ About me block layout   <========================================================= CURRENT TASK  
   ☐ Services block layout
   ☐ Portfolio block layout
   ☐ Blog block layout
