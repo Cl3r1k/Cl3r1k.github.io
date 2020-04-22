@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 
+import 'particles.js';
 import throttle from 'lodash/throttle';
 
 import './scss/main.scss';
@@ -39,7 +40,12 @@ const throttledScrollHandler = throttle(scrollHandler, 100);
 const initApp = () => {
   document.addEventListener('scroll', throttledScrollHandler);
 
-  console.log('navBarElement: ', navBarElement);
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  particlesJS.load('particles-js', 'assets/particlesjs-config.json', () => {
+    // console.log('callback - particles-js config loaded');
+  });
+
+  // console.log('navBarElement: ', navBarElement);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
