@@ -3,6 +3,10 @@
 // -----------------------------------------------------------------------------
 
 /* Common styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
   // display: grid;
@@ -31,15 +35,19 @@ body {
   padding: 10px 30px;
   box-sizing: border-box;
   color: $whiteColor;
-  background-color: $blackColor;
+  background-color: transparent;
   z-index: 100;
+  transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  &.scrolled {
+    background-color: $blackColor;
+  }
   .logo {
     margin: 0;
   }
   .nav-menu {
     display: flex;
     list-style: none;
-    align-items: center;
+    align-items: center;    
     .nav-link {
       font-size: 10px;
       letter-spacing: 2px;
@@ -48,9 +56,52 @@ body {
       padding: 15px 10px;
       margin-left: 10px;
       color: $whiteColor;
-      &.active {
-        background-color: red;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background-color: $whiteColor;
+        transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
       }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        right: 0;
+        height: 1px;
+        width: 0;
+        background-color: $whiteColor;
+        transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+      }
+      &:hover {
+        &::after {
+          width: 40px;
+          right: calc(50% - 20px);
+        }
+      }
+    }
+    .active {
+      // background-color: red;
+      .nav-link {
+        &::before {
+          width: 20px;
+          left: calc(50% - 10px);
+        }
+        &::after {
+          width: 20px;
+          right: calc(50% - 10px);
+        }
+      }
+      // &:hover {
+      //   &::after {
+      //     width: 20px;
+      //     left: calc(50% - 10px);
+      //   }
+      // }
     }
   }
 }

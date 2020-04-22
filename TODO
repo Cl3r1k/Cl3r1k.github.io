@@ -1,10 +1,11 @@
 
 Todo:
   ☐ Header layout
-    ☐ implement styles for menu items   <========================================================= CURRENT TASK    
-    ☐ implement styles backgound for menu
+    ✔ implement styles for menu items @done(20-04-22 12:25)
+      ☐ Improve styles for menu item (when link clicked, if smooth scroll, styles applyed after scroll completed (look for class change to 'active'))  
+    ✔ implement styles backgound for menu @done(20-04-22 12:25)
   ☐ Start block layout
-    ☐ implement `particles-js`
+    ☐ implement `particles-js`   <========================================================= CURRENT TASK  
     ☐ implement `self typing text`
     ☐ implement `Scroll down`
   ☐ About me block layout
