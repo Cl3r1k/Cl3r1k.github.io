@@ -2,9 +2,11 @@
 
 import 'particles.js';
 import throttle from 'lodash/throttle';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Constants
-import { introTypingTexts } from '../settings/config';
+import { introTypingTexts, AOSConfig } from '../settings/config';
 
 // Styles
 import './scss/main.scss';
@@ -12,8 +14,20 @@ import './scss/main.scss';
 const navBarElement = document.getElementById('navBarId');
 const mainNavLinks = document.querySelectorAll('nav ul li a');
 const typingTextElement = document.getElementById('typingTextId');
+const parentTypingTextElement = typingTextElement.parentElement;
+const skillsElements = document.querySelectorAll('section.skill-card');
+
+// App State
+const state = {
+  skillsScrolled: false,
+};
 // const mainDivs = document.querySelectorAll('main div');
 // Set of texts to display in Typing Texts module
+
+const fireSkills = () => {
+  state.skillsScrolled = true;
+  skillsElements.forEach(item => item.classList.add('scrolled-skills'));
+};
 
 const scrollHandler = () => {
   // console.log('evt: ', evt);
@@ -33,6 +47,10 @@ const scrollHandler = () => {
     link.parentElement.classList.toggle('active', isScrollInDivArea);
   });
 
+  if (scrollPosition > 400 && !state.skillsScrolled) {
+    fireSkills();
+  }
+
   // console.log('mainDivs: ', mainDivs);
 };
 
@@ -44,14 +62,14 @@ const scrollHandler = () => {
 const typingTextAnimate = () => {
   let counter = 0;
   setInterval(() => {
+    typingTextElement.textContent = introTypingTexts[counter];
     if (counter === introTypingTexts.length - 1) {
       counter = 0;
     } else {
       counter += 1;
     }
-    typingTextElement.textContent = introTypingTexts[counter];
-    typingTextElement.style.display = 'none';
-    typingTextElement.style.display = 'initial';
+    parentTypingTextElement.removeChild(typingTextElement);
+    parentTypingTextElement.appendChild(typingTextElement);
   }, 4000);
 };
 
@@ -66,6 +84,8 @@ const initApp = () => {
   });
 
   typingTextAnimate();
+
+  AOS.init(AOSConfig);
 
   // console.log('navBarElement: ', navBarElement);
 };

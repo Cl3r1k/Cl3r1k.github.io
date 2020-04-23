@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="particles.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway&amp;subset=latin-ext" rel="stylesheet">
   <title>Personal portfolio</title>
 </head>
 
@@ -36,7 +37,7 @@
       <div class="intro-typing landing-text">
         <div class="intro-typing-body">
           <span class="intro-typing-static-text">I'm</span>
-          <span class="intro-typing-animated-text" id="typingTextId">Creative</span>
+          <span class="intro-typing-animated-text" id="typingTextId">Vladimir</span>
         </div>
       </div>
       <div class="scroll-container scroll-position">
@@ -50,73 +51,155 @@
 
     <!-- ========================================= ABOUT ME SECTION ========================================= -->
     <div class="section-wrapper about-container" id="aboutId">
-      <h3>Hello, I am Vladimir!</h3>
-      <div class="advantages-container">
-        <div class="description-block">
-          <h4>Some words about me</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed consequatur earum hic, beatae, dolorem,
-            maxime voluptate, veritatis iure ea assumenda est pariatur ipsa dolor molestias nam ratione modi eaque sunt
-            expedita fugiat, vero voluptates ratione onsequatur earum hic, beatae, dolorem.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita fugiat, vero voluptates ratione
-            reiciendis dicta, dolores labore neque itaque, consectetur vitae quos, magnam! Esse nostrum placeat
-            laudantium amet sunt modi alias, vel suscipit.</p>
+      <div class="wrapper">
+        <div class="headline">
+          <h3>Hello, I am Vladimir!</h3>
         </div>
-        <div class="skills-block">
-          <h4>MY SKILS</h4>
-          <div class="skill-bar">PHOTOSHOP / 3 YEARS OF EXPERIENCE</div>
-          <div class="skill-bar">HTML / 5 YEARS OF EXPERIENCE</div>
-          <div class="skill-bar">CSS / 4 YEARS OF EXPERIENCE</div>
-          <div class="skill-bar">PHP / 3 YEARS OF EXPERIENCE</div>
+        <div class="advantages-container">
+          <div class="description-block" data-aos="fade">
+            <h4 class="styled-h4">Some words about me</h4>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed consequatur earum hic, beatae, dolorem,
+                maxime voluptate, veritatis iure ea assumenda est pariatur ipsa dolor molestias nam ratione modi eaque
+                sunt
+                expedita fugiat, vero voluptates ratione onsequatur earum hic, beatae, dolorem.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita fugiat, vero voluptates ratione
+                reiciendis dicta, dolores labore neque itaque, consectetur vitae quos, magnam! Esse nostrum placeat
+                laudantium amet sunt modi alias, vel suscipit.</p>
+            </div>
+          </div>
+          <div class="skills-block">
+            <h4 class="styled-h4" data-aos="fade">MY SKILS</h4>
+
+            <!-- <div class="skill-bar">PHOTOSHOP / 3 YEARS OF EXPERIENCE</div> -->
+            <section class="skill-card">
+              <div class="skill-header">
+                <span class="skill-description">
+                  <span class="skill-title">PHOTOSHOP</span>
+                  <span class="skill-exp">/ 3 YEARS OF EXPERIENCE</span>
+                </span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-bg"></div>
+                <div class="skill-bar-placeholder" style="width: 70%;">
+                  <div class="skill-bar-filler"></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="skill-card">
+              <div class="skill-header">
+                <span class="skill-description">
+                  <span class="skill-title">HTML</span>
+                  <span class="skill-exp">/ 5 YEARS OF EXPERIENCE</span>
+                </span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-bg"></div>
+                <div class="skill-bar-placeholder" style="width: 90%;">
+                  <div class="skill-bar-filler"></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="skill-card">
+              <div class="skill-header">
+                <span class="skill-description">
+                  <span class="skill-title">CSS</span>
+                  <span class="skill-exp">/ 4 YEARS OF EXPERIENCE</span>
+                </span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-bg"></div>
+                <div class="skill-bar-placeholder" style="width: 80%;">
+                  <div class="skill-bar-filler"></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="skill-card">
+              <div class="skill-header">
+                <span class="skill-description">
+                  <span class="skill-title">Javascript</span>
+                  <span class="skill-exp">/ 3 YEARS OF EXPERIENCE</span>
+                </span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-bg"></div>
+                <div class="skill-bar-placeholder" style="width: 75%;">
+                  <div class="skill-bar-filler"></div>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
     <!-- ========================================= ABOUT ME SECTION :END ========================================= -->
 
     <div class="section-wrapper services-container" id="servicesId">
-      <h3>MY OFFER</h3>
+      <div class="headline">
+        <h3>MY OFFER</h3>
+      </div>
       <ul class="services-items">
         <li>
-          <section class="service-card">PHOTOGRAPHY</section>
+          <section class="service-card" data-aos="fade">PHOTOGRAPHY</section>
         </li>
         <li>
-          <section class="service-card">WEB DESIGN</section>
+          <section class="service-card" data-aos="fade" data-aos-delay="150">WEB DESIGN</section>
         </li>
         <li>
-          <section class="service-card">WEB DEVELOPMENT</section>
+          <section class="service-card" data-aos="fade" data-aos-delay="300">WEB DEVELOPMENT</section>
         </li>
         <li>
-          <section class="service-card">MOBILE APPS</section>
+          <section class="service-card" data-aos="fade" data-aos-delay="450">MOBILE APPS</section>
         </li>
       </ul>
       <ul class="stat-items">
         <li>
-          <section class="stat-card">PROJECT COMPLETED</section>
+          <section class="stat-card" data-aos="fade" data-aos-offset="150">PROJECT COMPLETED</section>
         </li>
         <li>
-          <section class="stat-card">HAPPY CUSTOMMERS</section>
+          <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="150">HAPPY CUSTOMMERS
+          </section>
         </li>
         <li>
-          <section class="stat-card">CUPS OF COFFEE</section>
+          <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="300">CUPS OF COFFEE</section>
         </li>
         <li>
-          <section class="stat-card">AWARD WINNIG</section>
+          <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="450">AWARD WINNIG</section>
         </li>
       </ul>
     </div>
 
     <div class="section-wrapper portfolio-container" id="portfolioId">
-      <h3>MY PORTFOLIO</h3>
+      <div class="headline">
+        <h3>MY PORTFOLIO</h3>
+      </div>
+
       <div class="works-container"></div>
+
+      <div class="" data-aos="fade">
+        <a href="project-list.html">See more <i class="fa fa-long-arrow-right"></i></a>
+      </div>
     </div>
 
     <div class="section-wrapper blog-container" id="blogId">
-      <h3>LATEST BLOG POSTS</h3>
+      <div class="headline">
+        <h3>LATEST BLOG POSTS</h3>
+      </div>
       <div class="blog-list"></div>
       <div class="cite-slider"></div>
     </div>
 
     <div class="section-wrapper contact-container" id="contactId">
-      <h3>CONTACT ME</h3>
+      <div class="headline">
+        <h3>CONTACT ME</h3>
+      </div>
       <div class="form-container">
         <div class="contact-form"></div>
         <div class="contact-info"></div>
@@ -129,6 +212,9 @@
     <div class="copyrights-block">ALL RIGHTS RESERVED</div>
     <div class="social-block">icons</div>
   </footer>
+
+  <!-- particles -->
+  <script src="particles.js"></script>
 </body>
 
 </html>

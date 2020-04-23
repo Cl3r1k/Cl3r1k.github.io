@@ -14,8 +14,31 @@ body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 2em;
+  font-size: 14px;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
 .wrapper {
-  width: 100%;
+  width: 1200px;
+  margin: auto;
+  padding: 0 15px;
   box-sizing: border-box;
   @media screen and (max-width: $mobile) {
     // styles for mobile
@@ -47,7 +70,7 @@ body {
   .nav-menu {
     display: flex;
     list-style: none;
-    align-items: center;    
+    align-items: center;
     .nav-link {
       font-size: 10px;
       letter-spacing: 2px;
@@ -107,10 +130,11 @@ body {
 }
 
 main {
-  .landing-container {    
+  .landing-container {
     height: 100vh;
     background-color: #b5b5b5;
-    background: url('../../assets/images/intro_bg.jpg') no-repeat fixed 50% 50%/cover;
+    background: url('../../assets/images/intro_bg.jpg') no-repeat fixed 50% 50% /
+      cover;
     &::after {
       content: '';
       position: absolute;
@@ -122,11 +146,30 @@ main {
   }
 
   .about-container {
-    background-color: lighten($debugColor, $amount: 10);
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .advantages-container {
+      display: flex;
+      justify-content: space-between;
+      .description-block {
+        max-width: 50%;
+        padding: 0 15px;
+      }
+      .skills-block {
+        max-width: 40%;
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 
   .services-container {
-    background-color: lighten($debugColor, $amount: 20);
+    background-color: lighten($debugColor, $amount: 20); // @DEBUG
   }
 
   .services-container {
@@ -134,7 +177,7 @@ main {
   }
 
   .portfolio-container {
-    background-color: lighten($debugColor, $amount: 30);
+    background-color: lighten($debugColor, $amount: 30); // @DEBUG
   }
 
   .blog-container {
@@ -170,6 +213,75 @@ main {
   width: 100%;
   height: 100%;
   z-index: 30;
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 60px;
+  h3 {
+    font-weight: 600;
+    font-size: 30px;
+  }
+}
+
+.styled-h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.skill-card {
+  margin-top: 20px;
+  .skill-header {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    .skill-description {
+      flex: 1;
+      .skill-title {
+      }
+      .skill-exp {
+        color: $silverColor;
+      }
+    }
+    .skill-percent {
+    }
+  }
+  .skill-bar {
+    height: 10px;
+    width: 100%;    
+    position: relative;
+    .skill-bar-bg {
+      position: absolute;
+      height: 10px;
+      width: 100%; 
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .skill-bar-placeholder {
+      position: relative;
+      height: 100%;
+      .skill-bar-filler {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background: #000;
+        transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
+  }
+  &.scrolled-skills {
+    // background-color: rgb(192, 218, 218);
+    .skill-bar {
+      .skill-bar-placeholder {
+        .skill-bar-filler {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 // .active {

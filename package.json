@@ -42,6 +42,7 @@
     ]
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "core-js": "^3.6.5",
     "lodash": "^4.17.15",
     "particles.js": "^2.0.0"
