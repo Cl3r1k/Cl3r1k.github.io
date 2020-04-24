@@ -12,15 +12,20 @@ import { introTypingTexts, AOSConfig } from '../settings/config';
 // Styles
 import './scss/main.scss';
 
+const SKILL_SCROLL_TRIGGER = 400;
+const COUNTER_SCROLL_TRIGGER = 500;
+
 const navBarElement = document.getElementById('navBarId');
 const mainNavLinks = document.querySelectorAll('nav ul li a');
 const typingTextElement = document.getElementById('typingTextId');
 const parentTypingTextElement = typingTextElement.parentElement;
 const skillsElements = document.querySelectorAll('section.skill-card');
+const countersElements = document.querySelectorAll('div.stat-card-counter');
 
 // App State
 const state = {
   skillsScrolled: false,
+  countersScrolled: false,
 };
 // const mainDivs = document.querySelectorAll('main div');
 // Set of texts to display in Typing Texts module
@@ -28,6 +33,34 @@ const state = {
 const fireSkills = () => {
   state.skillsScrolled = true;
   skillsElements.forEach(item => item.classList.add('scrolled-skills'));
+};
+
+const fireCounters = () => {
+  state.countersScrolled = true;
+  const dataCounters = [];
+  countersElements.forEach(item => dataCounters.push(+item.dataset.counter));
+  const counters = Array(dataCounters.length).fill(0);
+  const maxDataCounter = dataCounters.reduce(
+    (acc, curr) => (curr > acc ? curr : acc),
+    0
+  );
+  const timer = setInterval(() => {
+    counters.forEach((item, idx) => {
+      if (item < dataCounters[idx]) {
+        counters[idx] += 1;
+        countersElements[idx].textContent = counters[idx];
+      }
+    });
+
+    const maxCounter = counters.reduce(
+      (acc, curr) => (curr > acc ? curr : acc),
+      0
+    );
+
+    if (maxCounter >= maxDataCounter) {
+      clearInterval(timer);
+    }
+  }, 10);
 };
 
 const scrollHandler = () => {
@@ -48,8 +81,12 @@ const scrollHandler = () => {
     link.parentElement.classList.toggle('active', isScrollInDivArea);
   });
 
-  if (scrollPosition > 400 && !state.skillsScrolled) {
+  if (scrollPosition > SKILL_SCROLL_TRIGGER && !state.skillsScrolled) {
     fireSkills();
+  }
+
+  if (scrollPosition > COUNTER_SCROLL_TRIGGER && !state.countersScrolled) {
+    fireCounters();
   }
 
   // console.log('mainDivs: ', mainDivs);

@@ -190,7 +190,16 @@ main {
   .counter-container {
     background-color: $blackColor;
     .stat-items {
-      background-color: lighten($color: $debugColor, $amount: 10); // @DEBUG
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .stat-item {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
   }
 
