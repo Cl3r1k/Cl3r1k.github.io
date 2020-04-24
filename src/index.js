@@ -12,15 +12,22 @@ import { introTypingTexts, AOSConfig } from '../settings/config';
 // Styles
 import './scss/main.scss';
 
+const TYPING_DELAY = 4000;
+const SCROLL_THROTTLE = 100;
 const SKILL_SCROLL_TRIGGER = 400;
 const COUNTER_SCROLL_TRIGGER = 500;
 
 const navBarElement = document.getElementById('navBarId');
-const mainNavLinks = document.querySelectorAll('nav ul li a');
+const mainNavLinks = document.querySelectorAll('nav.nav-bar ul li a');
 const typingTextElement = document.getElementById('typingTextId');
 const parentTypingTextElement = typingTextElement.parentElement;
 const skillsElements = document.querySelectorAll('section.skill-card');
 const countersElements = document.querySelectorAll('div.stat-card-counter');
+const portfolioNavLinks = document.querySelectorAll('nav.portfolio-nav ul li');
+const portfolioCardsElements = document.querySelectorAll(
+  'section.portfolio-card'
+);
+const portfolioCardsParent = document.getElementById('portfolioListId');
 
 // App State
 const state = {
@@ -108,10 +115,39 @@ const typingTextAnimate = () => {
     }
     parentTypingTextElement.removeChild(typingTextElement);
     parentTypingTextElement.appendChild(typingTextElement);
-  }, 4000);
+  }, TYPING_DELAY);
 };
 
-const throttledScrollHandler = throttle(scrollHandler, 100);
+const throttledScrollHandler = throttle(scrollHandler, SCROLL_THROTTLE);
+
+const portfolioNavHandler = evt => {
+  // console.log('evt: ', evt);
+  // console.log('dataset: ', dataset);
+  const tagName = evt.target.dataset.tag;
+  // console.log('tagName: ', tagName);
+
+  portfolioNavLinks.forEach(item =>
+    item.classList.toggle('active', item.dataset.tag === tagName)
+  );
+
+  console.log('portfolioCardsElements: ', portfolioCardsElements);
+  console.log('portfolioCardsParent: ', portfolioCardsParent);
+  // if (!dataset.tag) return;
+
+  while (portfolioCardsParent.firstChild) {
+    portfolioCardsParent.firstChild.remove();
+  }
+
+  // console.log('portfolioCardsElements: ', portfolioCardsElements);
+  // portfolioCardsParent.appendChild(portfolioCardsElements[0]);
+  portfolioCardsElements.forEach(item => {
+    if (item.dataset.tag === tagName || !tagName) {
+      portfolioCardsParent.append(item);
+    }
+  });
+
+  // console.log('after return');
+};
 
 const initApp = () => {
   document.addEventListener('scroll', throttledScrollHandler);
@@ -125,6 +161,9 @@ const initApp = () => {
 
   AOS.init(AOSConfig);
 
+  portfolioNavLinks.forEach(item =>
+    item.addEventListener('click', portfolioNavHandler)
+  );
   // console.log('navBarElement: ', navBarElement);
 };
 
