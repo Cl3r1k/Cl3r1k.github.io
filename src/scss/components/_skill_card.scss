@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the skill-card component.
+// -----------------------------------------------------------------------------
+
+.skill-card {
+  margin-top: 20px;
+  .skill-header {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    .skill-description {
+      flex: 1;
+      .skill-title {
+      }
+      .skill-exp {
+        color: $silverColor;
+      }
+    }
+    .skill-percent {
+    }
+  }
+  .skill-bar {
+    height: 10px;
+    width: 100%;    
+    position: relative;
+    .skill-bar-bg {
+      position: absolute;
+      height: 10px;
+      width: 100%; 
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .skill-bar-placeholder {
+      position: relative;
+      height: 100%;
+      .skill-bar-filler {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background: #000;
+        transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+    }
+  }
+  &.scrolled-skills {
+    // background-color: rgb(192, 218, 218);
+    .skill-bar {
+      .skill-bar-placeholder {
+        .skill-bar-filler {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

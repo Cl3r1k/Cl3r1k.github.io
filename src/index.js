@@ -4,6 +4,7 @@ import 'particles.js';
 import throttle from 'lodash/throttle';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'font-awesome/scss/font-awesome.scss';
 
 // Constants
 import { introTypingTexts, AOSConfig } from '../settings/config';

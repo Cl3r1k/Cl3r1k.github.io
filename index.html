@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <!-- ========================================= HEADER SECTION ========================================= -->
   <header>
     <nav class="nav-bar" id="navBarId">
       <h1 class="logo">Vladimir</h1>
@@ -29,6 +30,7 @@
       </ul>
     </nav>
   </header>
+  <!-- ========================================= HEADER SECTION: END ========================================= -->
 
   <main>
     <!-- ========================================= INTRO SECTION ========================================= -->
@@ -141,41 +143,81 @@
     </div>
     <!-- ========================================= ABOUT ME SECTION :END ========================================= -->
 
+    <!-- ========================================= SERVICES SECTION ========================================= -->
     <div class="section-wrapper services-container" id="servicesId">
-      <div class="headline">
-        <h3>MY OFFER</h3>
+      <div class="wrapper">
+        <div class="headline">
+          <h3>MY OFFER</h3>
+        </div>
+        <ul class="services-items">
+          <li class="services-item">
+            <section class="service-card" data-aos="fade">
+              <div class="service-card-wrapper">
+                <i class="icon-camera"></i>
+                <h4>Photography</h4>
+                <p>See my IG feed below!</p>
+              </div>
+            </section>
+          </li>
+          <li class="services-item">
+            <section class="service-card" data-aos="fade" data-aos-delay="150">
+              <div class="service-card-wrapper">
+                <i class="icon-tools"></i>
+                <h4>Web design</h4>
+                <p>Custom sites using HTMl, CSS and JavaScript!</p>
+              </div>
+            </section>
+          </li>
+          <li class="services-item">
+            <section class="service-card" data-aos="fade" data-aos-delay="300">
+              <div class="service-card-wrapper">
+                <i class="icon-laptop"></i>
+                <h4>Web dev</h4>
+                <p>Development using Angular, React or PHP!</p>
+              </div>
+            </section>
+          </li>
+          <li class="services-item">
+            <section class="service-card" data-aos="fade" data-aos-delay="450">
+              <div class="service-card-wrapper">
+                <i class="icon-mobile"></i>
+                <h4>Mobile apps</h4>
+                <p>Experience building native Android apps in Java!</p>
+              </div>
+            </section>
+          </li>
+        </ul>
       </div>
-      <ul class="services-items">
-        <li>
-          <section class="service-card" data-aos="fade">PHOTOGRAPHY</section>
-        </li>
-        <li>
-          <section class="service-card" data-aos="fade" data-aos-delay="150">WEB DESIGN</section>
-        </li>
-        <li>
-          <section class="service-card" data-aos="fade" data-aos-delay="300">WEB DEVELOPMENT</section>
-        </li>
-        <li>
-          <section class="service-card" data-aos="fade" data-aos-delay="450">MOBILE APPS</section>
-        </li>
-      </ul>
-      <ul class="stat-items">
-        <li>
-          <section class="stat-card" data-aos="fade" data-aos-offset="150">PROJECT COMPLETED</section>
-        </li>
-        <li>
-          <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="150">HAPPY CUSTOMMERS
-          </section>
-        </li>
-        <li>
-          <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="300">CUPS OF COFFEE</section>
-        </li>
-        <li>
-          <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="450">AWARD WINNIG</section>
-        </li>
-      </ul>
     </div>
+    <!-- ========================================= SERVICES SECTION: END ========================================= -->
 
+    <!-- ========================================= COUNTERS SECTION: END ========================================= -->
+    <div class="section-wrapper counter-container">
+      <div class="wrapper">
+        <ul class="stat-items">
+          <li>
+            <section class="stat-card" data-aos="fade" data-aos-offset="150">
+              <i class="fa fa-code-fork"></i>
+              <div>3***</div>
+              <h5>PROJECT COMPLETED</h5>
+            </section>
+          </li>
+          <li>
+            <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="150">HAPPY CUSTOMMERS
+            </section>
+          </li>
+          <li>
+            <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="300">CUPS OF COFFEE</section>
+          </li>
+          <li>
+            <section class="stat-card" data-aos="fade" data-aos-offset="150" data-aos-delay="450">AWARD WINNIG</section>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ========================================= COUNTERS SECTION: END ========================================= -->
+
+    <!-- ========================================= PORTFOLIO SECTION ========================================= -->
     <div class="section-wrapper portfolio-container" id="portfolioId">
       <div class="headline">
         <h3>MY PORTFOLIO</h3>
@@ -187,7 +229,9 @@
         <a href="project-list.html">See more <i class="fa fa-long-arrow-right"></i></a>
       </div>
     </div>
+    <!-- ========================================= PORTFOLIO SECTION: END ========================================= -->
 
+    <!-- ========================================= BLOG SECTION ========================================= -->
     <div class="section-wrapper blog-container" id="blogId">
       <div class="headline">
         <h3>LATEST BLOG POSTS</h3>
@@ -195,7 +239,9 @@
       <div class="blog-list"></div>
       <div class="cite-slider"></div>
     </div>
+    <!-- ========================================= BLOG SECTION: END ========================================= -->
 
+    <!-- ========================================= CONTACTS SECTION ========================================= -->
     <div class="section-wrapper contact-container" id="contactId">
       <div class="headline">
         <h3>CONTACT ME</h3>
@@ -205,13 +251,16 @@
         <div class="contact-info"></div>
       </div>
     </div>
+    <!-- ========================================= CONTACTS SECTION: END ========================================= -->
   </main>
 
+  <!-- ========================================= FOOTER SECTION ========================================= -->
   <footer class="footer">
     <div class="feedback">contacts</div>
     <div class="copyrights-block">ALL RIGHTS RESERVED</div>
     <div class="social-block">icons</div>
   </footer>
+  <!-- ========================================= FOOTER SECTION: END ========================================= -->
 
   <!-- particles -->
   <script src="particles.js"></script>
