@@ -16,17 +16,17 @@
       <h1 class="logo">Vladimir</h1>
       <ul class="nav-menu">
         <li class="active">
-          <a class="nav-link" href="#startId">Start</a></li>
+          <a class="nav-link" href="#home">Start</a></li>
         <li>
-          <a class="nav-link" href="#aboutId">About me</a></li>
+          <a class="nav-link" href="#about">About me</a></li>
         <li>
-          <a class="nav-link" href="#servicesId">Services</a></li>
+          <a class="nav-link" href="#services">Services</a></li>
         <li>
-          <a class="nav-link" href="#portfolioId">Portfolio</a></li>
+          <a class="nav-link" href="#portfolio">Portfolio</a></li>
         <li>
-          <a class="nav-link" href="#blogId">Blog</a></li>
+          <a class="nav-link" href="#blog">Blog</a></li>
         <li>
-          <a class="nav-link" href="#contactId">Contact</a></li>
+          <a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -34,7 +34,7 @@
 
   <main>
     <!-- ========================================= INTRO SECTION ========================================= -->
-    <div class="landing-container flex-centered color-white" id="startId">
+    <div class="landing-container flex-centered color-white" id="home">
       <div id="particles-js"></div>
       <div class="intro-typing landing-text">
         <div class="intro-typing-body">
@@ -52,7 +52,7 @@
     <!-- ========================================= INTRO SECTION :END ========================================= -->
 
     <!-- ========================================= ABOUT ME SECTION ========================================= -->
-    <div class="section-wrapper about-container" id="aboutId">
+    <div class="section-wrapper about-container" id="about">
       <div class="wrapper">
         <div class="headline">
           <h3>Hello, I am Vladimir!</h3>
@@ -144,7 +144,7 @@
     <!-- ========================================= ABOUT ME SECTION :END ========================================= -->
 
     <!-- ========================================= SERVICES SECTION ========================================= -->
-    <div class="section-wrapper services-container" id="servicesId">
+    <div class="section-wrapper services-container" id="services">
       <div class="wrapper">
         <div class="headline">
           <h3>MY OFFER</h3>
@@ -231,7 +231,7 @@
     <!-- ========================================= COUNTERS SECTION: END ========================================= -->
 
     <!-- ========================================= PORTFOLIO SECTION ========================================= -->
-    <div class="section-wrapper portfolio-container" id="portfolioId">
+    <div class="section-wrapper portfolio-container" id="portfolio">
       <div class="headline">
         <h3>MY PORTFOLIO</h3>
       </div>
@@ -305,10 +305,10 @@
     <!-- ========================================= PORTFOLIO SECTION: END ========================================= -->
 
     <!-- ========================================= BLOG SECTION ========================================= -->
-    <div class="section-wrapper blog-container" id="blogId">
+    <div class="section-wrapper blog-container" id="blog">
       <div class="wrapper">
         <div class="headline">
-          <h3>LATEST BLOG POSTS</h3>
+          <h3>Interesting blog posts</h3>
         </div>
         <div class="blog-list">
           <div class="blog-card" data-aos="fade">
@@ -396,20 +396,73 @@
             </div>
           </div>
         </div>
-
         <div class="swiper-pagination"></div>
       </div>
     </div>
     <!-- ========================================= TESTIMONIALS SECTION: END ========================================= -->
 
     <!-- ========================================= CONTACTS SECTION ========================================= -->
-    <div class="section-wrapper contact-container" id="contactId">
-      <div class="headline">
-        <h3>CONTACT ME</h3>
-      </div>
-      <div class="form-container">
-        <div class="contact-form"></div>
-        <div class="contact-info"></div>
+    <div class="section-wrapper contact-container" id="contact">
+      <div class="wrapper">
+        <div class="headline">
+          <h3>CONTACT ME</h3>
+        </div>
+        <div class="form-container">
+          <div class="form-wrapper" data-aos="fade">
+            <form class="form-contact" id="formContact">
+              <div class="input-container">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="form-name" required />
+                  <label for="form-name" class="form-label">Name*</label>
+                </div>
+              </div>
+              <div class="input-container">
+                <div class="form-group">
+                  <input type="email" class="form-control" id="form-mail" required />
+                  <label for="form-mail" class="form-label">e-mail*</label>
+                </div>
+              </div>
+              <div class="input-container">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="form-subject" />
+                  <label for="form-subject" class="form-label">subject</label>
+                </div>
+              </div>
+              <div class="input-container">
+                <div class="form-group">
+                  <textarea id="form-message" class="form-control textarea" required></textarea>
+                  <label for="form-message" class="form-label">Type your message here*</label>
+                </div>
+              </div>
+              <div class="buttons-container">
+                <input type="submit" class="button-styled button-white" id="submitContactButton" value="Send message" />
+              </div>
+            </form>
+            <div class="form-status" id="formStatus">Your message was sent! (Possibly)</div>
+          </div>
+          <div class="contact-info">
+            <h4 class="contact-title" data-aos="fade">Feel free to contact me!</h4>
+            <p class="contact-text" data-aos="fade">Have a question? Want to chat? Drop me a line.</p>
+            <div class="contact-details">
+              <div class="contact-detail" data-aos="fade">
+                <a href="tel:89030765936">
+                  <i class="fa fa-phone"></i> 903 076 59 36
+                </a>
+              </div>
+              <div class="contact-detail" data-aos="fade">
+                <a href="mailto:cl3r1k2@gmail.com">
+                  <i class="fa fa-envelope"></i> cl3r1k2@gmail.com
+                </a>
+              </div>
+              <div class="contact-detail" data-aos="fade">
+                <i class="fa fa-clock-o"></i> Mon-Fri 8:00AM - 6:00PM
+              </div>
+              <div class="contact-detail" data-aos="fade">
+                <i class="fa fa-map-marker"></i> Novosibirsk, Russia
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- ========================================= CONTACTS SECTION: END ========================================= -->

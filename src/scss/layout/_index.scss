@@ -286,6 +286,117 @@ main {
 
   .contact-container {
     background-color: $greyColor;
+    .form-container {
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 30px;
+      .form-wrapper {
+        max-width: 50%;
+        width: 100%;
+        .form-contact {
+          background: $blackColor;
+          padding: 40px;
+          color: $whiteColor;
+          font-size: 14px;
+          .input-container {
+            margin-bottom: 20px;
+            .form-group {
+              position: relative;
+              padding-top: 0.6em;
+              overflow: hidden;
+              border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+              .form-control {
+                width: 100%;
+                padding: 0.5em 1em 0.2em;
+                border: none;
+                box-sizing: border-box;
+                font-size: 1em;
+                background: transparent;
+                color: $whiteColor;
+                &.textarea {
+                  min-height: 150px;
+                }
+                &:focus,
+                &:hover,
+                &.filled {
+                  outline: none;
+                  & + .form-label {
+                    top: 0;
+                    font-size: 0.6em;
+                  }
+                }
+              }
+              .form-label {
+                position: absolute;
+                top: 1.4em;
+                left: 0;
+                // font-size: 10px;
+                margin: 0;
+                margin-left: 1em;
+                font-size: 0.8em;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: rgba(255, 255, 255, 0.6);
+                transition: 0.3s ease-in-out;
+              }
+            }
+          }
+        }
+        .form-status {
+          display: none;
+          padding: 20px;
+          text-align: center;
+          color: $whiteColor;
+          background: #00d1b2;
+          &.success {
+            display: block;
+          }
+        }
+      }
+      .contact-info {
+        max-width: 30%;
+        width: 100%;
+        .contact-title {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .contact-text {
+        }
+        .contact-detail {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          font-size: 14px;
+          color: $black2Color;
+          a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: $black2Color;
+          }
+          i {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            font-size: 1em;
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            background: $blackColor;
+            color: $whiteColor;
+          }
+        }
+      }
+    }
   }
 }
 

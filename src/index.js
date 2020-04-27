@@ -29,6 +29,10 @@ const portfolioCardsElements = document.querySelectorAll(
   'section.portfolio-card'
 );
 const portfolioCardsParent = document.getElementById('portfolioListId');
+// const submitContactButton = document.getElementById('submitContactButton');
+const formContact = document.getElementById('formContact');
+const formStatusElement = document.getElementById('formStatus');
+const formControls = document.querySelectorAll('form .form-control');
 
 // App State
 const state = {
@@ -150,6 +154,15 @@ const portfolioNavHandler = evt => {
   // console.log('after return');
 };
 
+const submitHandler = () => {
+  formContact.reset();
+  formStatusElement.classList.add('success');
+};
+
+const changeHandler = evt => {
+  evt.target.classList.toggle('filled', !!evt.target.value);
+};
+
 const initApp = () => {
   document.addEventListener('scroll', throttledScrollHandler);
 
@@ -181,6 +194,10 @@ const initApp = () => {
       clickable: true,
     },
   });
+
+  // submitContactButton.addEventListener('click', submitHandler);
+  formContact.addEventListener('submit', submitHandler);
+  formControls.forEach(item => item.addEventListener('blur', changeHandler));
 };
 
 document.addEventListener('DOMContentLoaded', () => {
