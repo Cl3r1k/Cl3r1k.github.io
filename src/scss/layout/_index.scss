@@ -256,6 +256,14 @@ main {
 
   .blog-container {
     background-color: $greyColor;
+    .blog-list {
+      display: flex;
+      padding-top: 30px;
+    }
+  }
+
+  .testimonials-container {
+    background-color: $blackColor;
   }
 
   .contact-container {
