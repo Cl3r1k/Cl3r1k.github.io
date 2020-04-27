@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
-
 import 'particles.js';
 import throttle from 'lodash/throttle';
 import AOS from 'aos';
+import Swiper from 'swiper';
 import 'aos/dist/aos.css';
 import 'font-awesome/scss/font-awesome.scss';
+import '../node_modules/swiper/css/swiper.min.css';
 
 // Constants
 import { introTypingTexts, AOSConfig } from '../settings/config';
@@ -165,6 +166,21 @@ const initApp = () => {
     item.addEventListener('click', portfolioNavHandler)
   );
   // console.log('navBarElement: ', navBarElement);
+
+  // eslint-disable-next-line no-unused-vars
+  const mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    centeredSlides: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
 };
 
 document.addEventListener('DOMContentLoaded', () => {

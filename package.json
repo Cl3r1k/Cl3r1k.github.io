@@ -47,7 +47,8 @@
     "et-line": "^1.0.1",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.15",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "swiper": "^5.3.8"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
