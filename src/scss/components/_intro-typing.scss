@@ -16,6 +16,9 @@
     justify-content: center;
     white-space: nowrap;
     font-size: 4em;
+    @media screen and (max-width: $tablet768) {
+      font-size: 2em;
+    }
   }
 
   &-animated-text {

@@ -9,6 +9,7 @@ html {
 
 body {
   height: 100vh;
+  line-height: 1.429;
   // display: grid;
   // grid-template-rows: auto 1fr auto;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -50,13 +51,35 @@ a {
 
 .wrapper {
   width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
-  @media screen and (max-width: $mobile) {
-    // styles for mobile
+  @media screen and (max-width: $laptop1024) {
+    width: 100%;
+  }
+  @media screen and (max-width: $preTablet991) {
+    width: 750px;
+  }
+  @media screen and (max-width: $preTablet900) {
+    width: 750px;
+  }
+  @media screen and (max-width: $preTablet800) {
+    width: 750px;
+  }
+  @media screen and (max-width: $tablet768) {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  @media screen and (max-width: $tablet576) {
+    width: 100%;
+  }
+  @media screen and (max-width: $mobile480) {
     margin: 0;
-    min-width: $mobile;
+  }
+  @media screen and (max-width: $mobile375) {
+    min-width: $mobile375;
   }
 }
 
@@ -79,7 +102,11 @@ a {
   }
   .logo {
     margin: 0;
+    font-size: 1.4em;
     color: $whiteColor;
+    // @media screen and (max-width: $preTablet800) {
+    //   font-size: 24px;
+    // }
   }
   .nav-menu {
     display: flex;
@@ -122,7 +149,6 @@ a {
       }
     }
     .active {
-      // background-color: red;
       .nav-link {
         &::before {
           width: 20px;
@@ -133,12 +159,34 @@ a {
           right: calc(50% - 10px);
         }
       }
-      // &:hover {
-      //   &::after {
-      //     width: 20px;
-      //     left: calc(50% - 10px);
-      //   }
-      // }
+    }
+  }
+  @media screen and (max-width: $tablet576) {
+    padding: 0 10px;
+    .nav-menu {
+      padding: 0 0 0 10px;
+      .nav-link {
+        font-size: 0.5em;
+        padding: 15px 0;
+      }
+    }
+  }
+  @media screen and (max-width: $mobile480) {
+    justify-content: flex-start;
+    .nav-menu {
+      .nav-link {
+        font-size: 0.4em;
+      }
+    }
+  }
+  @media screen and (max-width: $mobile375) {
+    .logo {
+      font-size: 0.8em;
+    }
+    .nav-menu {
+      .nav-link {
+        margin: 0;
+      }
     }
   }
 }
@@ -173,11 +221,25 @@ main {
         padding: 0 15px;
       }
       .skills-block {
+        display: flex;
+        flex-direction: column;
         max-width: 40%;
         width: 100%;
         padding: 0 15px;
-        display: flex;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: $preTablet991) {
         flex-direction: column;
+        .description-block,
+        .skills-block {
+          max-width: 100%;
+        }
+      }
+      @media screen and (max-width: $tablet768) {
+        .description-block,
+        .skills-block {
+          padding: 0;
+        }
       }
     }
   }
@@ -193,6 +255,20 @@ main {
       .services-item {
         padding-left: 15px;
         padding-right: 15px;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: $preTablet991) {
+        flex-wrap: wrap;
+        .services-item {
+          max-width: 50%;
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+      @media screen and (max-width: $tablet768) {
+        .services-item {
+          max-width: 100%;
+        }
       }
     }
   }
@@ -209,6 +285,13 @@ main {
         width: 100%;
         padding-left: 15px;
         padding-right: 15px;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: $tablet768) {
+        flex-wrap: wrap;
+        .stat-item {
+          max-width: 50%;
+        }
       }
     }
   }
@@ -261,6 +344,12 @@ main {
       justify-content: center;
       margin-top: 45px;
     }
+    @media screen and (max-width: $mobile375) {
+      .works-container .portfolio-nav .nav-links .nav-link {
+        margin: 5px;
+        font-size: 0.5rem;
+      }
+    }
   }
 
   .blog-container {
@@ -268,6 +357,9 @@ main {
     .blog-list {
       display: flex;
       padding-top: 30px;
+      @media screen and (max-width: $tablet768) {
+        flex-wrap: wrap;
+      }
     }
   }
 
@@ -366,6 +458,9 @@ main {
       .contact-info {
         max-width: 30%;
         width: 100%;
+        @media screen and (max-width: $preTablet991) {
+          max-width: 40%;
+        }
         .contact-title {
           margin-top: 10px;
           margin-bottom: 10px;
@@ -405,6 +500,18 @@ main {
           }
         }
       }
+      @media screen and (max-width: $tablet768) {
+        flex-wrap: wrap;
+        .form-wrapper {
+          max-width: 100%;
+        }
+        .contact-info {
+          max-width: 100%;
+          .contact-title {
+            margin-top: 50px;
+          }
+        }
+      }
     }
   }
 }
@@ -419,6 +526,8 @@ main {
     align-items: center;
     .feedback {
       width: 33.3%;
+      padding-left: 15px;
+      padding-right: 15px;
       text-align: left;
       .feedback-item {
         display: flex;
@@ -433,6 +542,8 @@ main {
     }
     .copyrights-block {
       width: 33.3%;
+      padding-left: 15px;
+      padding-right: 15px;
       h2 {
         margin: 0;
         color: $whiteColor;
@@ -445,6 +556,8 @@ main {
     }
     .social-block {
       width: 33.3%;
+      padding-left: 15px;
+      padding-right: 15px;
       text-align: right;
       a {
         color: inherit;
@@ -452,6 +565,26 @@ main {
       i {
         font-size: 22px;
         margin-left: 5px;
+      }
+    }
+  }
+  @media screen and (max-width: $tablet768) {
+    .footer-content {
+      flex-wrap: wrap;
+      .feedback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      .copyrights-block {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      .social-block {
+        width: 100%;
+        text-align: center;
       }
     }
   }

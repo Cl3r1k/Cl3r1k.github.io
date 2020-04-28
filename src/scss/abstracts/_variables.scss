@@ -2,9 +2,14 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-$mobile: 375px;
-$tablet: 768px;
-$preTablet1020: 1020px;
+$mobile375: 375px;
+$mobile480: 480px;
+$tablet576: 576px;
+$tablet768: 768px;
+$preTablet800: 800px;
+$preTablet900: 900px;
+$preTablet991: 991px;
+$laptop1024: 1024px;
 $desktop: 1440px;
 $blackColor: #000000;
 $whiteColor: #ffffff;

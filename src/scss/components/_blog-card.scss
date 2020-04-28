@@ -64,4 +64,20 @@
       }
     }
   }
+  @media screen and (max-width: $tablet768) {
+    padding: 0;
+    width: 100%;
+    .blog-card-wrapper {
+      .blog-card-caption {
+        opacity: 1;
+        bottom: 6px;
+      }
+    }
+    &:hover {
+      .blog-card-wrapper {
+        transform: inherit;
+        -webkit-transform: inherit;
+      }
+    }
+  }
 }

@@ -32,4 +32,7 @@
       background-color: $gray3Color;
     }
   }
+  @media screen and (max-width: $tablet768) {
+    width: 75%;
+  }
 }
