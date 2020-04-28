@@ -12,16 +12,19 @@ import {
   introTypingTexts,
   AOSConfig,
   SEND_SUCCESS_DELAY,
+  LOADER_DELAY,
+  LOADING_DELAY,
+  COUNTER_DELAY,
+  TYPING_DELAY,
+  SCROLL_THROTTLE,
+  SKILL_SCROLL_TRIGGER,
+  COUNTER_SCROLL_TRIGGER,
 } from '../settings/config';
 
 // Styles
 import './scss/main.scss';
 
-const TYPING_DELAY = 4000;
-const SCROLL_THROTTLE = 100;
-const SKILL_SCROLL_TRIGGER = 400;
-const COUNTER_SCROLL_TRIGGER = 500;
-
+const preloader = document.getElementById('Preloader');
 const navBarElement = document.getElementById('navBarId');
 const mainNavLinks = document.querySelectorAll('nav.nav-bar ul li a');
 const typingTextElement = document.getElementById('typingTextId');
@@ -37,14 +40,13 @@ const portfolioCardsParent = document.getElementById('portfolioListId');
 const formContact = document.getElementById('formContact');
 const formStatusElement = document.getElementById('formStatus');
 const formControls = document.querySelectorAll('form .form-control');
+const bodySections = document.querySelectorAll('.hidden');
 
 // App State
 const state = {
   skillsScrolled: false,
   countersScrolled: false,
 };
-// const mainDivs = document.querySelectorAll('main div');
-// Set of texts to display in Typing Texts module
 
 const fireSkills = () => {
   state.skillsScrolled = true;
@@ -76,14 +78,10 @@ const fireCounters = () => {
     if (maxCounter >= maxDataCounter) {
       clearInterval(timer);
     }
-  }, 10);
+  }, COUNTER_DELAY);
 };
 
 const scrollHandler = () => {
-  // console.log('evt: ', evt);
-  // console.log('document.scrollTop: ', document.scrollTop());
-  // console.log('window.scrollY: ', window.scrollY);
-
   const scrollPosition = window.scrollY;
   navBarElement.classList.toggle('scrolled', scrollPosition > 100);
 
@@ -105,9 +103,6 @@ const scrollHandler = () => {
   if (scrollPosition > COUNTER_SCROLL_TRIGGER && !state.countersScrolled) {
     fireCounters();
   }
-
-  // console.log('mainDivs: ', mainDivs);
-  // console.log('navBarElement.clientHeight: ', navBarElement.clientHeight);
 };
 
 const typingTextAnimate = () => {
@@ -156,6 +151,17 @@ const changeHandler = evt => {
   evt.target.classList.toggle('filled', !!evt.target.value);
 };
 
+const postLoading = () => {
+  setTimeout(() => {
+    preloader.classList.add('--loaded');
+    bodySections.forEach(item => item.classList.remove('hidden'));
+    setTimeout(
+      () => preloader.parentElement.removeChild(preloader),
+      LOADING_DELAY
+    );
+  }, LOADER_DELAY);
+};
+
 const initApp = () => {
   document.addEventListener('scroll', throttledScrollHandler);
 
@@ -171,7 +177,6 @@ const initApp = () => {
   portfolioNavLinks.forEach(item =>
     item.addEventListener('click', portfolioNavHandler)
   );
-  // console.log('navBarElement: ', navBarElement);
 
   // eslint-disable-next-line no-unused-vars
   const mySwiper = new Swiper('.swiper-container', {
@@ -188,9 +193,10 @@ const initApp = () => {
     },
   });
 
-  // submitContactButton.addEventListener('click', submitHandler);
   formContact.addEventListener('submit', submitHandler);
   formControls.forEach(item => item.addEventListener('blur', changeHandler));
+
+  postLoading();
 };
 
 document.addEventListener('DOMContentLoaded', () => {

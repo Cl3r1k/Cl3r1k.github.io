@@ -18,12 +18,13 @@ Todo:
   ✔ Contact block layout @done(20-04-27 18:00)
   ✔ Footer section @done(20-04-28 12:50)
   ✔ Implement adaptive @done(20-04-28 16:32)
-  ☐ Add preloader   <========================================================= CURRENT TASK
+  ✔ Add preloader @done(20-04-28 17:26)
+  ☐ Fill with real content   <========================================================= CURRENT TASK
   ☐ Optimize build
   ☐ Deploy on gh-pages
 
 
 
-  `Time spent on markup (desktop)`: 71 pomos
+  `Time spent on markup (desktop)`: 72 pomos
   `Time spent on markup (adapative)`: 4 pomos
   `Total time spent`: 
