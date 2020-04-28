@@ -17,3 +17,5 @@ export const AOSConfig = {
   placement: 'top-bottom', // Anchor placement - which one position of element on the screen should trigger animation
   once: true, // Choose wheter animation should fire once, or every time you scroll up/down to element
 };
+
+export const SEND_SUCCESS_DELAY = 3000;

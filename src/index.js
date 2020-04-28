@@ -8,7 +8,11 @@ import 'font-awesome/scss/font-awesome.scss';
 import '../node_modules/swiper/css/swiper.min.css';
 
 // Constants
-import { introTypingTexts, AOSConfig } from '../settings/config';
+import {
+  introTypingTexts,
+  AOSConfig,
+  SEND_SUCCESS_DELAY,
+} from '../settings/config';
 
 // Styles
 import './scss/main.scss';
@@ -87,8 +91,9 @@ const scrollHandler = () => {
     const divElement = document.querySelector(link.hash);
 
     const isScrollInDivArea =
-      divElement.offsetTop <= scrollPosition &&
-      divElement.offsetTop + divElement.offsetHeight > scrollPosition;
+      divElement.offsetTop <= scrollPosition + navBarElement.clientHeight &&
+      divElement.offsetTop + divElement.offsetHeight >
+        scrollPosition + navBarElement.clientHeight;
 
     link.parentElement.classList.toggle('active', isScrollInDivArea);
   });
@@ -102,12 +107,8 @@ const scrollHandler = () => {
   }
 
   // console.log('mainDivs: ', mainDivs);
+  // console.log('navBarElement.clientHeight: ', navBarElement.clientHeight);
 };
-
-// const logIt = () => {
-//   console.log('logIt() called');
-//   scrollHandler();
-// };
 
 const typingTextAnimate = () => {
   let counter = 0;
@@ -126,37 +127,29 @@ const typingTextAnimate = () => {
 const throttledScrollHandler = throttle(scrollHandler, SCROLL_THROTTLE);
 
 const portfolioNavHandler = evt => {
-  // console.log('evt: ', evt);
-  // console.log('dataset: ', dataset);
   const tagName = evt.target.dataset.tag;
-  // console.log('tagName: ', tagName);
 
   portfolioNavLinks.forEach(item =>
     item.classList.toggle('active', item.dataset.tag === tagName)
   );
 
-  console.log('portfolioCardsElements: ', portfolioCardsElements);
-  console.log('portfolioCardsParent: ', portfolioCardsParent);
-  // if (!dataset.tag) return;
-
   while (portfolioCardsParent.firstChild) {
     portfolioCardsParent.firstChild.remove();
   }
-
-  // console.log('portfolioCardsElements: ', portfolioCardsElements);
-  // portfolioCardsParent.appendChild(portfolioCardsElements[0]);
   portfolioCardsElements.forEach(item => {
     if (item.dataset.tag === tagName || !tagName) {
       portfolioCardsParent.append(item);
     }
   });
-
-  // console.log('after return');
 };
 
 const submitHandler = () => {
   formContact.reset();
   formStatusElement.classList.add('success');
+  setTimeout(
+    () => formStatusElement.classList.remove('success'),
+    SEND_SUCCESS_DELAY
+  );
 };
 
 const changeHandler = evt => {
