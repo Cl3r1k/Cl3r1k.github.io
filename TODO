@@ -20,12 +20,12 @@ Todo:
   ✔ Implement adaptive @done(20-04-28 16:32)
   ✔ Add preloader @done(20-04-28 17:26)
   ✔ Fill with real content @done(20-04-29 17:21)
-  ☐ Add favicon   <========================================================= CURRENT TASK
-  ☐ Optimize build
+  ✔ Add favicon @done(20-04-29 17:35)
+  ☐ Optimize build   <========================================================= CURRENT TASK
   ☐ Deploy on gh-pages
 
 
 
   `Time spent on markup (desktop)`: 72 pomos
-  `Time spent on markup (adapative)`: 4 pomos
+  `Time spent on markup (adaptive)`: 4 pomos
   `Total time spent`: 
