@@ -1,4 +1,4 @@
-export const introTypingTexts = ['Creative', 'Experienced', 'Supper-Pupper'];
+export const introTypingTexts = ['Creative', 'Experienced', 'Enthusiastic'];
 
 /*
   |--------------------------------------------------------------------------

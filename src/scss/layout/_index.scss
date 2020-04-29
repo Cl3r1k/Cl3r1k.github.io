@@ -104,13 +104,15 @@ a {
   &.scrolled {
     background-color: $blackColor;
   }
+  h1 {
+    position: absolute;
+    font-size: 1px;
+  }
   .logo {
     margin: 0;
     font-size: 1.4em;
     color: $whiteColor;
-    // @media screen and (max-width: $preTablet800) {
-    //   font-size: 24px;
-    // }
+    width: 120px;
   }
   .nav-menu {
     display: flex;
@@ -186,6 +188,7 @@ a {
   @media screen and (max-width: $mobile375) {
     .logo {
       font-size: 0.8em;
+      width: 80px;
     }
     .nav-menu {
       .nav-link {

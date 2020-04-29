@@ -4,7 +4,7 @@ Todo:
     ✔ implement styles for menu items @done(20-04-22 12:25)
       ☐ Improve styles for menu item (when link clicked, if smooth scroll, styles applyed after scroll completed (look for class change to 'active'))  
     ✔ implement styles backgound for menu @done(20-04-22 12:25)
-    ☐ Implement custom text/logo/image for <h1>
+    ✔ Implement custom text/logo/image for <h1> @done(20-04-28 18:12)
   ✔ Intro section layout @done(20-04-22 15:04)
     ✔ implement `particles-js` @done(20-04-22 14:34)
     ✔ implement `self typing text` @done(20-04-22 17:18)
@@ -19,7 +19,8 @@ Todo:
   ✔ Footer section @done(20-04-28 12:50)
   ✔ Implement adaptive @done(20-04-28 16:32)
   ✔ Add preloader @done(20-04-28 17:26)
-  ☐ Fill with real content   <========================================================= CURRENT TASK
+  ✔ Fill with real content @done(20-04-29 17:21)
+  ☐ Add favicon   <========================================================= CURRENT TASK
   ☐ Optimize build
   ☐ Deploy on gh-pages
 
