@@ -69,6 +69,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 # misc
+/dist
 /.sass-cache
 /connect.lock
 /coverage

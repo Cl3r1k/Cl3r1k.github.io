@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -84,6 +85,9 @@ const config = {
   devServer: {
     contentBase: './dist',
     port: 3000,
+  },
+  optimization: {
+    minimizer: [new TerserPlugin()],
   },
 };
 
