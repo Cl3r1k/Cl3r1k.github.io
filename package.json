@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "Personal portfolio",
   "main": "src/index.js",
-  "homepage": "https://Cl3r1k.github.io/personal-portfolio",
+  "homepage": "https://Cl3r1k.github.io/",
   "author": "Cl3r1k",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Cl3r1k/personal-portfolio/issues"
+    "url": "https://github.com/Cl3r1k/Cl3r1k.github.io/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cl3r1k/personal-portfolio.git"
+    "url": "git+https://github.com/Cl3r1k/Cl3r1k.github.io.git"
   },
   "keywords": [
     "javascript",
