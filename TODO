@@ -1,3 +1,4 @@
+// For `npm run deploy` use `bash` - not `cmd`
 
 Todo:
   ☐ Header layout
@@ -22,7 +23,8 @@ Todo:
   ✔ Fill with real content @done(20-04-29 17:21)
   ✔ Add favicon @done(20-04-29 17:35)
   ✔ Optimize build @done(20-04-30 12:20)
-  ☐ Deploy on gh-pages   <========================================================= CURRENT TASK
+  ✔ Deploy on gh-pages @done(20-04-30 15:28)
+     <========================================================= CURRENT TASK
 
 
 
