@@ -23,7 +23,7 @@
     "build-dev": "webpack -d --mode development",
     "start": "webpack-dev-server --hot --mode development --open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist -b master",
     "lint": "eslint --debug ./src",
     "lint:fix": "eslint --fix ./src",
     "prettier": "prettier --write src/**/*.js",
