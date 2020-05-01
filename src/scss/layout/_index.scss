@@ -49,6 +49,11 @@ a {
   }
 }
 
+canvas {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
 .hidden {
   opacity: 0;
 }
@@ -83,7 +88,10 @@ a {
     margin: 0;
   }
   @media screen and (max-width: $mobile375) {
-    min-width: $mobile375;
+    // min-width: $mobile375;
+  }
+  @media screen and (max-width: $mobile320) {
+    // min-width: $mobile375;
   }
 }
 
@@ -111,13 +119,15 @@ a {
   .logo {
     margin: 0;
     font-size: 1.4em;
-    color: $whiteColor;
+    // color: $whiteColor;
+    color: transparent;
     width: 120px;
   }
   .nav-menu {
     display: flex;
     list-style: none;
     align-items: center;
+    box-sizing: border-box;
     .nav-link {
       font-size: 10px;
       letter-spacing: 2px;
@@ -170,29 +180,46 @@ a {
   @media screen and (max-width: $tablet576) {
     padding: 0 10px;
     .nav-menu {
-      padding: 0 0 0 10px;
+      padding-left: 5px;
       .nav-link {
-        font-size: 0.5em;
+        font-size: 0.5rem;
         padding: 15px 0;
       }
     }
   }
   @media screen and (max-width: $mobile480) {
-    justify-content: flex-start;
+    // justify-content: flex-start;
+    .logo {
+      font-size: 0.85rem;
+      width: 90px;
+    }
     .nav-menu {
       .nav-link {
-        font-size: 0.4em;
+        margin-left: 3px;
+        font-size: 0.4rem;
       }
     }
   }
   @media screen and (max-width: $mobile375) {
     .logo {
-      font-size: 0.8em;
-      width: 80px;
+      font-size: 0.8rem;
+      width: 70px;
     }
     .nav-menu {
       .nav-link {
-        margin: 0;
+        margin-left: 1px;
+      }
+    }
+  }
+  @media screen and (max-width: $mobile320) {
+    padding: 0 5px;
+    .logo {
+      font-size: 0.5rem;
+      width: 50px;
+    }
+    .nav-menu {
+      .nav-link {
+        font-size: 6px;
       }
     }
   }
@@ -208,7 +235,7 @@ main {
       content: '';
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       background-color: rgba($color: #000000, $alpha: 0.5);
       z-index: 10;
     }
@@ -350,6 +377,11 @@ main {
       display: flex;
       justify-content: center;
       margin-top: 45px;
+    }
+    @media screen and (max-width: $tablet768) {
+      .works-container .portfolio-nav .nav-links .nav-link {
+        padding: 5px;
+      }
     }
     @media screen and (max-width: $mobile375) {
       .works-container .portfolio-nav .nav-links .nav-link {
@@ -613,6 +645,7 @@ main {
 
 #particles-js {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 30;
